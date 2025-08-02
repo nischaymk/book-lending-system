@@ -24,8 +24,7 @@ ADMIN CREDENTIALS :
 username - admin
 password - admin123
 
-Note : 
-Only adding the book option is not working rest all the options in the book lending system are working.
+"Note: All features of the Book Lending System are working except for adding books and admin deleting users."
 
 
 To run the project put the below mentioned code in the terminal
