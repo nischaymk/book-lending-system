@@ -1,0 +1,49 @@
+{
+  "query": "SELECT br.id, b.title, b.author, u.username, br.borrow_date, br.due_date\n           FROM borrow_records br\n           JOIN books b ON br.book_id = b.id\n           JOIN users u ON br.user_id = u.id\n           WHERE br.return_date IS NULL",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "title",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "author",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "username",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "borrow_date",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "due_date",
+        "ordinal": 5,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "4172d5e4f07806cf15145f13897599367551c97f83245ca598d64c851802463b"
+}

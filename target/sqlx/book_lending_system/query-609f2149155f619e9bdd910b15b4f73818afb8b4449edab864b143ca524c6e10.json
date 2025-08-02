@@ -1,0 +1,61 @@
+{
+  "query": "SELECT id, title, author, isbn, publication_year, genre, copies_available, status FROM books",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "title",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "author",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "isbn",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "publication_year",
+        "ordinal": 4,
+        "type_info": "Int64"
+      },
+      {
+        "name": "genre",
+        "ordinal": 5,
+        "type_info": "Text"
+      },
+      {
+        "name": "copies_available",
+        "ordinal": 6,
+        "type_info": "Int64"
+      },
+      {
+        "name": "status",
+        "ordinal": 7,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "549fab4e1ab7acec18bc05c15fa3f4d9d9f753c3ecf5343a2a56d5ea1b15eb24"
+}

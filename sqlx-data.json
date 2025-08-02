@@ -1,0 +1,515 @@
+{
+  "db": "SQLite",
+  "08f8b140982093f6097a51b5eb0966bf91b719caca5f88cee42d1f4604f3812f": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "isbn",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "publication_year",
+          "ordinal": 4,
+          "type_info": "Int64"
+        },
+        {
+          "name": "genre",
+          "ordinal": 5,
+          "type_info": "Text"
+        },
+        {
+          "name": "copies_available",
+          "ordinal": 6,
+          "type_info": "Int64"
+        },
+        {
+          "name": "status",
+          "ordinal": 7,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "SELECT id, title, author, isbn, publication_year, genre, copies_available, status \n              FROM books WHERE id = ?"
+  },
+  "11e8b62c2d2018418dbb44ad282e938d7d4298bfeb2beb534c32db757014c4ee": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "username",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "borrow_date",
+          "ordinal": 4,
+          "type_info": "Text"
+        },
+        {
+          "name": "due_date",
+          "ordinal": 5,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 0
+      }
+    },
+    "query": "SELECT br.id, b.title, b.author, u.username, br.borrow_date, br.due_date\n           FROM borrow_records br\n           JOIN books b ON br.book_id = b.id\n           JOIN users u ON br.user_id = u.id\n           WHERE br.return_date IS NULL AND br.due_date < date('now')"
+  },
+  "26c9fa4a5475c1d68ea813067517db3a972879af2da0e11939a661367d0df816": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "DELETE FROM books WHERE id = ?"
+  },
+  "2fb5ded8ee59e61d3e8cf2e256b828ed5da759d61ace6e0e0e59bb3f3d657325": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 2
+      }
+    },
+    "query": "UPDATE borrow_records SET return_date = ? WHERE id = ?"
+  },
+  "4172d5e4f07806cf15145f13897599367551c97f83245ca598d64c851802463b": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "username",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "borrow_date",
+          "ordinal": 4,
+          "type_info": "Text"
+        },
+        {
+          "name": "due_date",
+          "ordinal": 5,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 0
+      }
+    },
+    "query": "SELECT br.id, b.title, b.author, u.username, br.borrow_date, br.due_date\n           FROM borrow_records br\n           JOIN books b ON br.book_id = b.id\n           JOIN users u ON br.user_id = u.id\n           WHERE br.return_date IS NULL"
+  },
+  "452709c2946dafd2b2cdc1c7c21ddecbba27478f4ae0c976e8429790c72b588b": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "UPDATE books SET copies_available = copies_available + 1 WHERE id = ?"
+  },
+  "492e5849cb7e154b5f7bd58604c1f09382cd8436e5a60b83d04235a704bd71ab": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "borrow_date",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "due_date",
+          "ordinal": 4,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "SELECT br.id, b.title, b.author, br.borrow_date, br.due_date\n           FROM borrow_records br\n           JOIN books b ON br.book_id = b.id\n           WHERE br.user_id = ? AND br.return_date IS NULL"
+  },
+  "51a5c018b591d7c278bcd6d25d8f01df96e0b9528ef6f348502dcbbfe6160968": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "UPDATE books SET copies_available = copies_available - 1 WHERE id = ?"
+  },
+  "53fb29e84785ed6eaffc80ffbb63368726814b59ee58798f7614d9b5d0e07e69": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 4
+      }
+    },
+    "query": "INSERT INTO borrow_records (user_id, book_id, borrow_date, due_date) \n             VALUES (?, ?, ?, ?)"
+  },
+  "549fab4e1ab7acec18bc05c15fa3f4d9d9f753c3ecf5343a2a56d5ea1b15eb24": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "isbn",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "publication_year",
+          "ordinal": 4,
+          "type_info": "Int64"
+        },
+        {
+          "name": "genre",
+          "ordinal": 5,
+          "type_info": "Text"
+        },
+        {
+          "name": "copies_available",
+          "ordinal": 6,
+          "type_info": "Int64"
+        },
+        {
+          "name": "status",
+          "ordinal": 7,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 0
+      }
+    },
+    "query": "SELECT id, title, author, isbn, publication_year, genre, copies_available, status FROM books"
+  },
+  "6e3cf9828ebf178725db28ade9971f8d8852d56ea7d76ab6b5e86f7914fcd607": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "username",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "email",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "role",
+          "ordinal": 3,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 0
+      }
+    },
+    "query": "SELECT id, username, email, role FROM users"
+  },
+  "733d5d04f7c2e2e3cae74fb820c111ece2172268ded7bfcd4e0233d491ab79dc": {
+    "describe": {
+      "columns": [
+        {
+          "name": "copies_available",
+          "ordinal": 0,
+          "type_info": "Int64"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "SELECT copies_available FROM books WHERE id = ?"
+  },
+  "73ffdf5be39aa5c4c160c2f77d6634a6970eeb4e1d3395f045ded747f0ce9d2a": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "DELETE FROM users WHERE id = ?"
+  },
+  "8459f95039d905a279bd537c754b2faccb262fec7241ee1e93835edf23a5f97c": {
+    "describe": {
+      "columns": [
+        {
+          "name": "book_id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        }
+      ],
+      "nullable": [
+        false
+      ],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "SELECT book_id FROM borrow_records WHERE id = ? AND return_date IS NULL"
+  },
+  "997d8b7b657daf09e254a0b0f6947206e725bf0d35fbd5a764ec9eef51de1dc2": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "isbn",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "publication_year",
+          "ordinal": 4,
+          "type_info": "Int64"
+        },
+        {
+          "name": "genre",
+          "ordinal": 5,
+          "type_info": "Text"
+        },
+        {
+          "name": "copies_available",
+          "ordinal": 6,
+          "type_info": "Int64"
+        },
+        {
+          "name": "status",
+          "ordinal": 7,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 3
+      }
+    },
+    "query": "SELECT id, title, author, isbn, publication_year, genre, copies_available, status \n         FROM books \n         WHERE title LIKE ? OR author LIKE ? OR isbn LIKE ?"
+  },
+  "a960a01ad39c4d293025e200c070ad631c8d6d95a985c6ce25a76277535f40e3": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 8
+      }
+    },
+    "query": "UPDATE books SET title = ?, author = ?, isbn = ?, publication_year = ?, genre = ?, \n              copies_available = ?, status = ? WHERE id = ?"
+  },
+  "d2f8ff23217cb680a9e28465482540cada934ff05051d41e1ba712b384b4f158": {
+    "describe": {
+      "columns": [],
+      "nullable": [],
+      "parameters": {
+        "Right": 7
+      }
+    },
+    "query": "INSERT INTO books (title, author, isbn, publication_year, genre, copies_available, status) \n              VALUES (?, ?, ?, ?, ?, ?, ?)"
+  },
+  "df69b25a11f7a6506b862def2b59295157ad58aa95dbb5ed47a5c6c33811f573": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int64"
+        },
+        {
+          "name": "title",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "author",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "borrow_date",
+          "ordinal": 3,
+          "type_info": "Text"
+        },
+        {
+          "name": "due_date",
+          "ordinal": 4,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Right": 1
+      }
+    },
+    "query": "SELECT br.id, b.title, b.author, br.borrow_date, br.due_date\n           FROM borrow_records br\n           JOIN books b ON br.book_id = b.id\n           WHERE br.user_id = ? AND br.return_date IS NULL AND br.due_date < date('now')"
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Book</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+  <h1>Add a New Book</h1>
+  <form id="addBookForm" novalidate>
+    <input type="text" name="title" placeholder="Title" required /><br />
+    <input type="text" name="author" placeholder="Author" required /><br />
+    <input type="text" name="isbn" placeholder="ISBN" required /><br />
+    <input type="number" name="publication_year" placeholder="Publication Year" min="1000" max="2100" required /><br />
+    <input type="text" name="genre" placeholder="Genre/Category" required /><br />
+    <input type="number" name="copies_available" placeholder="Number of Copies" min="1" required /><br />
+    <button type="submit">Add Book</button>
+  </form>
+  <div class="error" id="error"></div>
+  <button onclick="window.location.href='admin_books.html'">Back to Book List</button>
+</body>
+</html>

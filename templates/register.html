@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register | Book Lending System</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Register as Lender</h2>
+    <form id="registerForm" novalidate>
+      <input type="text" name="username" placeholder="Username" required autocomplete="username" />
+      <input type="email" name="email" placeholder="Email" required autocomplete="email" />
+      <input type="password" name="password" placeholder="Password" required autocomplete="new-password" />
+      <input type="hidden" name="role" value="lender" />
+      <button type="submit">Register</button>
+    </form>
+    <div class="error" id="error"></div>
+    <p class="switch-page">
+      Already have an account? 
+      <button type="button" onclick="window.location.href='login.html'">Login</button>
+    </p>
+  </div>
+</body>
+</html>

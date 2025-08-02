@@ -1,0 +1,61 @@
+{
+  "query": "SELECT id, title, author, isbn, publication_year, genre, copies_available, status\n         FROM books\n         WHERE title LIKE ? OR author LIKE ? OR isbn LIKE ?",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "title",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "author",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "isbn",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "publication_year",
+        "ordinal": 4,
+        "type_info": "Int64"
+      },
+      {
+        "name": "genre",
+        "ordinal": 5,
+        "type_info": "Text"
+      },
+      {
+        "name": "copies_available",
+        "ordinal": 6,
+        "type_info": "Int64"
+      },
+      {
+        "name": "status",
+        "ordinal": 7,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "34b87e778ef9b1463f1389ea9fb0bedab9455493528434e44a194767766c17cb"
+}
